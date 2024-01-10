@@ -80,9 +80,11 @@
 	const colors = get(".choose-color").querySelectorAll("span");
 	const bgs = get(".choose-bg").querySelectorAll("div");
 
+	const initFontSize = 12;
 	fontSizes.forEach((size, idx) => {
 		size.addEventListener("click", () => {
 			changeActiveObj(fontSizes, idx);
+			get("html").style.fontSize = `${initFontSize + idx * 2}px`;
 		});
 	});
 

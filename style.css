@@ -627,7 +627,7 @@ main .container .right {
 
 /* ------------FONT SIZE------------ */
 .customize-theme .font-size {
-	margin-top: 3rem;
+	margin-top: 2rem;
 }
 
 .customize-theme .font-size > div {
@@ -711,7 +711,8 @@ main .container .right {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 1rem;
+	overflow-x: auto;
 }
 
 .customize-theme .background .choose-bg > div {
