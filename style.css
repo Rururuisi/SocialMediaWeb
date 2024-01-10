@@ -169,6 +169,7 @@ main .container .left .menu-toggle {
 	align-items: center;
 	background: var(--color-primary);
 	color: var(--color-white);
+	overflow: hidden;
 	cursor: pointer;
 	display: none;
 }
@@ -234,7 +235,7 @@ main .container .left .menu-toggle:hover {
 	font-size: 1rem;
 }
 
-.left .sidebar .active {
+.left .sidebar > .active {
 	background: var(--color-light);
 }
 
@@ -243,7 +244,12 @@ main .container .left .menu-toggle:hover {
 	color: var(--color-primary);
 }
 
-.left .sidebar .active:before {
+.left .sidebar .active > span {
+	display: contents;
+	height: 100%;
+}
+
+.left .sidebar .active > span:before {
 	content: "";
 	display: block;
 	width: 0.5rem;
@@ -276,11 +282,16 @@ main .container .left .menu-toggle:hover {
 	top: 0;
 	left: 110%;
 	width: 30rem;
+	max-height: 30rem;
 	background: var(--color-white);
 	border-radius: var(--card-border-radius);
 	padding: var(--card-padding);
 	box-shadow: 0 0 1rem var(--color-primary);
 	z-index: 8;
+}
+
+.left .notifications-popup.active {
+	display: block;
 }
 
 .left .notifications-popup::before {
@@ -294,7 +305,17 @@ main .container .left .menu-toggle:hover {
 	left: -0.58rem;
 }
 
-.left .notifications-popup > div {
+.left .notifications-popup .notifications {
+	width: 100%;
+	max-height: 28rem;
+	overflow-y: scroll;
+}
+
+.left .notifications-popup .notifications::-webkit-scrollbar {
+	display: none;
+}
+
+.left .notifications-popup .notifications > div {
 	display: flex;
 	align-items: start;
 	gap: 1rem;
@@ -788,7 +809,7 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 	/* ----------NOTIFICATION POPUP------------ */
 	.left .notifications-popup {
 		position: absolute;
-		left: -20rem;
+		left: -21rem;
 		width: 20rem;
 	}
 
@@ -828,6 +849,19 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 
 	main .container .left .menu-toggle {
 		display: flex;
+	}
+
+	.left .notifications-popup {
+		left: -17rem;
+		width: 16rem;
+	}
+
+	.left .notifications-popup .notifications {
+		max-height: 25rem;
+	}
+
+	.left .notifications-popup:before {
+		left: calc(16rem - 0.6rem);
 	}
 
 	.customize-theme .card {

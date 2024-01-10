@@ -17,6 +17,13 @@
 					item.classList.remove("active");
 				}
 			});
+
+			// --------------------Toggle Notification Pannel--------------------
+			if (menuItem.id !== "notification-menu-item") {
+				get(".notifications-popup").classList.remove("active");
+			} else {
+				get(".notifications-popup").classList.add("active");
+			}
 		});
 	});
 
@@ -31,13 +38,14 @@
 
 	// --------------------Toggle Sidebar on Mobile Screen--------------------
 	const menuToggler = get(".menu-toggle");
-	menuToggler.addEventListener("click", (evt) => {
+	menuToggler.addEventListener("click", () => {
 		if (menuToggler.className === "menu-toggle") {
 			get(".sidebar").classList.add("active");
 			menuToggler.classList.add("active");
 		} else {
 			get(".sidebar").classList.remove("active");
 			menuToggler.classList.remove("active");
+			get(".notifications-popup").classList.remove("active");
 		}
 	});
 })();
