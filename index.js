@@ -6,15 +6,29 @@
 		return document.querySelectorAll(target);
 	};
 
+	// --------------------Menu Items Activation Handling--------------------
+	const menuItems = getAll(".menu-item");
+	menuItems.forEach((menuItem, idx) => {
+		menuItem.addEventListener("click", () => {
+			menuItems.forEach((item, i) => {
+				if (idx === i) {
+					item.classList.add("active");
+				} else {
+					item.classList.remove("active");
+				}
+			});
+		});
+	});
+
+	// --------------------Toggle Sidebar on Mobile Screen--------------------
 	const menuToggler = get(".menu-toggle");
 	menuToggler.addEventListener("click", (evt) => {
 		if (menuToggler.className === "menu-toggle") {
-			get(".sidebar").className = "sidebar active";
-			menuToggler.className = "menu-toggle active";
-			menuToggler.innerHTML = closeIcon;
+			get(".sidebar").classList.add("active");
+			menuToggler.classList.add("active");
 		} else {
-			get(".sidebar").className = "sidebar";
-			menuToggler.className = "menu-toggle";
+			get(".sidebar").classList.remove("active");
+			menuToggler.classList.remove("active");
 		}
 	});
 })();
