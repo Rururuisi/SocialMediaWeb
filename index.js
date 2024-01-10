@@ -20,6 +20,15 @@
 		});
 	});
 
+	// --------------------Toggle Theme Customized Pannel--------------------
+	get("#theme-menu-item").addEventListener("click", () => {
+		get(".customize-theme").style.display = "grid";
+	});
+
+	get(".close-theme").addEventListener("click", () => {
+		get(".customize-theme").style.display = "none";
+	});
+
 	// --------------------Toggle Sidebar on Mobile Screen--------------------
 	const menuToggler = get(".menu-toggle");
 	menuToggler.addEventListener("click", (evt) => {
