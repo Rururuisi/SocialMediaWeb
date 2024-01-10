@@ -160,7 +160,8 @@ main .container .left .menu-toggle {
 	position: fixed;
 	bottom: 1rem;
 	right: 0.3rem;
-	padding: 1.2rem 1.5rem;
+	width: 5rem;
+	height: 5rem;
 	font-size: 1.4rem;
 	border-radius: 50%;
 	display: flex;
@@ -170,6 +171,20 @@ main .container .left .menu-toggle {
 	color: var(--color-white);
 	cursor: pointer;
 	display: none;
+}
+
+main .container .left .menu-toggle > div {
+	width: 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	translate: 1.8rem;
+	transition: translate 0.5s ease;
+	overflow: hidden;
+}
+
+main .container .left .menu-toggle.active > div {
+	translate: -1.8rem;
 }
 
 main .container .left .menu-toggle:hover {
@@ -788,7 +803,7 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 
 	main .container .sidebar {
 		translate: 5rem 0;
-		transform: translate 0.5s ease;
+		transition: translate 0.5s ease;
 	}
 
 	main .container .sidebar.active {
