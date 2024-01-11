@@ -84,7 +84,8 @@
 
 	// --------------------Handle Theme Customization--------------------
 	const fontSizes = get(".choose-size").querySelectorAll("span");
-	const colors = get(".choose-color").querySelectorAll("span");
+	const colors = get("#choose-primary-color").querySelectorAll("span");
+	const btnColors = get("#choose-btn-color").querySelectorAll("span");
 	const bgs = get(".choose-bg").querySelectorAll("div");
 
 	// -----Handle Font Size Change-----
@@ -102,6 +103,17 @@
 		color.addEventListener("click", () => {
 			changeActiveObj(colors, idx);
 			get(":root").style.setProperty("--primary-color-hue", hslHues[idx]);
+		});
+	});
+
+	// -----Handle Button Color Change-----
+	btnColors.forEach((color, idx) => {
+		color.addEventListener("click", () => {
+			changeActiveObj(btnColors, idx);
+			get(":root").style.setProperty(
+				"--btn-primary-color-hue",
+				hslHues[idx]
+			);
 		});
 	});
 

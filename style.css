@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 :root {
+	--btn-primary-color-hue: 252;
 	--primary-color-hue: 252;
 	--color-card: 100%;
 	--color-bg: 95%;
@@ -9,7 +10,7 @@
 	--color-white: hsl(var(--primary-color-hue), 30%, var(--color-card));
 	--color-light: hsl(var(--primary-color-hue), 30%, var(--color-bg));
 	--color-gray: hsl(252, 15%, 65%);
-	--color-primary: hsl(var(--primary-color-hue), 56%, 53%);
+	--color-primary: hsl(var(--btn-primary-color-hue), 56%, 53%);
 	--color-secondary: hsl(var(--primary-color-hue), 75%, 80%);
 	--color-success: hsl(120, 95%, 65%);
 	--color-danger: hsl(0, 95%, 65%);
@@ -879,7 +880,7 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 	}
 
 	.customize-theme .card {
-		width: 80%;
+		width: 90%;
 		padding: 2rem;
 	}
 
