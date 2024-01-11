@@ -33,11 +33,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 16px;
+}
+
 body {
 	font-family: "Poppins", sans-serif;
 	color: var(--color-dark);
 	background-color: var(--color-light);
-	/*overflow-x: hidden;*/
 }
 
 /* --------------------GENERAL STYLES-------------------- */
@@ -156,46 +159,48 @@ main .container .left .profile {
 }
 
 /* ==================SIDEBAR================== */
-main .container .left .menu-toggle {
-	position: fixed;
-	bottom: 1rem;
-	right: 0.3rem;
-	width: 5rem;
-	height: 5rem;
-	font-size: 1.4rem;
-	border-radius: 50%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: var(--color-primary);
-	color: var(--color-white);
-	overflow: hidden;
-	cursor: pointer;
-	display: none;
-}
-
-main .container .left .menu-toggle > div {
-	width: 5rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	translate: 1.8rem;
-	transition: translate 0.5s ease;
-	overflow: hidden;
-}
-
-main .container .left .menu-toggle.active > div {
-	translate: -1.8rem;
-}
-
-main .container .left .menu-toggle:hover {
-	opacity: 0.9;
-}
 
 .left .sidebar {
+	position: relative;
 	margin-top: 1rem;
 	background: var(--color-white);
 	border-radius: var(--card-border-radius);
+}
+
+.left .sidebar .menu-toggle {
+	position: absolute;
+	bottom: 2rem;
+	right: 5rem;
+	padding: 1rem 0.8rem;
+	width: 3rem;
+	height: 4rem;
+	border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+	background: var(--color-primary);
+	cursor: pointer;
+	overflow: hidden;
+	display: none;
+}
+
+.left .sidebar .menu-toggle > div i {
+	margin: 0;
+	font-size: 2rem;
+	color: white;
+}
+
+.left .sidebar .menu-toggle > div {
+	position: absolute;
+	top: 0.55rem;
+	left: 0.5rem;
+	width: 8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	translate: 0rem;
+	transition: translate 0.5s ease;
+}
+
+.left .sidebar .menu-toggle.active > div {
+	translate: -6rem;
 }
 
 .left .sidebar .menu-item {
@@ -235,7 +240,7 @@ main .container .left .menu-toggle:hover {
 	font-size: 1rem;
 }
 
-.left .sidebar > .active {
+.left .sidebar > .menu-item.active {
 	background: var(--color-light);
 }
 
@@ -258,7 +263,7 @@ main .container .left .menu-toggle:hover {
 	background: var(--color-primary);
 }
 
-.left .sidebar .menu-item:first-child {
+.left .sidebar .menu-item:nth-child(2) {
 	border-top-left-radius: var(--card-border-radius);
 	overflow: hidden;
 }
@@ -627,7 +632,7 @@ main .container .right {
 
 /* ------------FONT SIZE------------ */
 .customize-theme .font-size {
-	margin-top: 2rem;
+	margin-top: 4rem;
 }
 
 .customize-theme .font-size > div {
@@ -723,7 +728,6 @@ main .container .right {
 	font-size: 1rem;
 	font-weight: bold;
 	border-radius: 0.4rem;
-	border: 2px solid var(--color-gray);
 	cursor: pointer;
 }
 

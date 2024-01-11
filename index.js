@@ -1,4 +1,5 @@
 (() => {
+	// ---------------------------Encapsulation---------------------------
 	const get = (target) => {
 		return document.querySelector(target);
 	};
@@ -15,6 +16,8 @@
 			}
 		});
 	};
+
+	const root = getComputedStyle(document.documentElement);
 
 	// --------------------Menu Items Activation Handling--------------------
 	const menuItems = getAll(".menu-item");
@@ -80,7 +83,7 @@
 	const colors = get(".choose-color").querySelectorAll("span");
 	const bgs = get(".choose-bg").querySelectorAll("div");
 
-	const initFontSize = 12;
+	const initFontSize = 10;
 	fontSizes.forEach((size, idx) => {
 		size.addEventListener("click", () => {
 			changeActiveObj(fontSizes, idx);
