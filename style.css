@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 :root {
+	--primary-color-hue: 252;
+
 	--color-white: hsl(252, 30%, 100%);
-	--color-light: hsl(252, 30%, 95%);
+	--color-light: hsl(var(--primary-color-hue), 30%, 95%);
 	--color-gray: hsl(252, 15%, 65%);
-	--color-primary: hsl(252, 75%, 60%);
-	--color-secondary: hsl(254, 91%, 83%);
+	--color-primary: hsl(var(--primary-color-hue), 56%, 53%);
+	--color-secondary: hsl(var(--primary-color-hue), 75%, 80%);
 	--color-success: hsl(120, 95%, 65%);
 	--color-danger: hsl(0, 95%, 65%);
 	--color-dark: hsl(252, 30%, 17%);

@@ -17,8 +17,6 @@
 		});
 	};
 
-	const root = getComputedStyle(document.documentElement);
-
 	// --------------------Menu Items Activation Handling--------------------
 	const menuItems = getAll(".menu-item");
 	menuItems.forEach((menuItem, idx) => {
@@ -91,9 +89,11 @@
 		});
 	});
 
+	const hslHues = [252, 52, 352, 152, 202];
 	colors.forEach((color, idx) => {
 		color.addEventListener("click", () => {
 			changeActiveObj(colors, idx);
+			get(":root").style.setProperty("--primary-color-hue", hslHues[idx]);
 		});
 	});
 
