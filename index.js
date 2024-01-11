@@ -76,11 +76,18 @@
 		get(".customize-theme").style.display = "none";
 	});
 
+	get(".customize-theme").addEventListener("click", (evt) => {
+		if (evt.target.className === "customize-theme") {
+			get(".customize-theme").style.display = "none";
+		}
+	});
+
 	// --------------------Handle Theme Customization--------------------
 	const fontSizes = get(".choose-size").querySelectorAll("span");
 	const colors = get(".choose-color").querySelectorAll("span");
 	const bgs = get(".choose-bg").querySelectorAll("div");
 
+	// -----Handle Font Size Change-----
 	const initFontSize = 14;
 	fontSizes.forEach((size, idx) => {
 		size.addEventListener("click", () => {
@@ -89,6 +96,7 @@
 		});
 	});
 
+	// -----Handle Color Change-----
 	const hslHues = [252, 52, 352, 152, 202];
 	colors.forEach((color, idx) => {
 		color.addEventListener("click", () => {
@@ -97,9 +105,25 @@
 		});
 	});
 
+	// -----Handle Background Change-----
+	const rootColorVars = ["--color-card", "--color-bg", "--color-font"];
+	const bgColors = [
+		["100%", "95%", "17%"],
+		["20%", "15%", "90%"],
+		["10%", "0%", "90%"],
+	];
+
+	const changeBackground = (rootVar, color) => {
+		if (rootVar.length !== color.length) return;
+		rootVar.forEach((vari, idx) => {
+			get(":root").style.setProperty(vari, color[idx]);
+		});
+	};
+
 	bgs.forEach((bg, idx) => {
 		bg.addEventListener("click", () => {
 			changeActiveObj(bgs, idx);
+			changeBackground(rootColorVars, bgColors[idx]);
 		});
 	});
 })();
