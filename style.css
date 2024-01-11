@@ -885,7 +885,11 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 
 	.customize-theme .card {
 		width: 90%;
-		padding: 2rem;
+		padding: 1.5rem;
+	}
+
+	.customize-theme .card .font-size {
+		margin-top: 2rem;
 	}
 
 	.customize-theme .background .choose-bg {
