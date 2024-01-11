@@ -318,7 +318,7 @@ main .container .left .profile {
 
 .left .notifications-popup .notifications {
 	width: 100%;
-	max-height: 28rem;
+	max-height: 22rem;
 	overflow-y: scroll;
 }
 
@@ -873,10 +873,6 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 	.left .notifications-popup {
 		left: -17rem;
 		width: 16rem;
-	}
-
-	.left .notifications-popup .notifications {
-		max-height: 25rem;
 	}
 
 	.left .notifications-popup:before {
