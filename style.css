@@ -867,11 +867,21 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 	}
 
 	main .container .middle {
+		display: none;
+	}
+
+	main .container .middle.active {
+		display: block;
 		grid-column: 1/3;
 	}
 
 	main .container .right {
 		display: none;
+	}
+
+	main .container .right.active {
+		display: block;
+		grid-column: 1/3;
 	}
 
 	.customize-theme .card {

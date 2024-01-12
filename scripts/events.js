@@ -11,17 +11,26 @@ const addEventListeners = () => {
 			} else {
 				get(".notifications-popup").classList.add("active");
 			}
+
+			if (menuItem.id === "home") {
+				get(".middle").className = "middle active";
+				get(".right").className = "right";
+			}
 		});
 	});
 
 	// ---------------------------Messages---------------------------
 	const msgNotif = get("#messages-notifications");
 	msgNotif.addEventListener("click", () => {
-		get(".messages").style.boxShadow = "0 0 1rem var(--color-primary)";
+		get(".middle").className = "middle";
+		get(".right").className = "right active";
 		msgNotif.querySelector(".notification-count").style.display = "none";
-		setTimeout(() => {
-			get(".messages").style.boxShadow = "none";
-		}, 2000);
+		if (window.innerWidth > 992) {
+			get(".messages").style.boxShadow = "0 0 1rem var(--color-primary)";
+			setTimeout(() => {
+				get(".messages").style.boxShadow = "none";
+			}, 2000);
+		}
 	});
 
 	// search for messages
