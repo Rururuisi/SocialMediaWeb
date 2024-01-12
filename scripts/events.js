@@ -1,22 +1,4 @@
-(() => {
-	// ---------------------------Encapsulation---------------------------
-	const get = (target) => {
-		return document.querySelector(target);
-	};
-	const getAll = (target) => {
-		return document.querySelectorAll(target);
-	};
-
-	const changeActiveObj = (items, idx) => {
-		items.forEach((item, i) => {
-			if (idx === i) {
-				item.classList.add("active");
-			} else {
-				item.classList.remove("active");
-			}
-		});
-	};
-
+const addEventListeners = () => {
 	// --------------------Menu Items Activation Handling--------------------
 	const menuItems = getAll(".menu-item");
 	menuItems.forEach((menuItem, idx) => {
@@ -138,4 +120,24 @@
 			changeBackground(rootColorVars, bgColors[idx]);
 		});
 	});
-})();
+
+	// ----------------------Handle Like Event-----------------------
+	const numbers = getAll(".number-of-likes");
+	getAll(".like").forEach((heart, idx) => {
+		heart.addEventListener("click", () => {
+			const noAction = '<i class="uil uil-heart"></i>';
+			const liked = '<img src="./images/heart.png"/>';
+			if (heart.innerHTML === noAction) {
+				heart.innerHTML = liked;
+				numbers[idx].innerText = `${
+					parseInt(numbers[idx].innerText) + 1
+				} others`;
+			} else {
+				heart.innerHTML = noAction;
+				numbers[idx].innerText = `${
+					parseInt(numbers[idx].innerText) - 1
+				} others`;
+			}
+		});
+	});
+};

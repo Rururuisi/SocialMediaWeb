@@ -144,6 +144,7 @@ main .container {
 	display: grid;
 	grid-template-columns: 18vw auto 20vw;
 	column-gap: 2rem;
+	padding-bottom: 2rem;
 	position: relative;
 }
 
@@ -433,6 +434,7 @@ main .container .left .profile {
 .middle .feed .head {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 1rem;
 }
 
 .middle .feed .head .user {
@@ -441,8 +443,23 @@ main .container .left .profile {
 	gap: 1rem;
 }
 
+.middle .feed .caption {
+	padding: 0 1rem;
+	font-size: 0.9rem;
+}
+
+.middle .feed .hash-tag > span {
+	color: var(--color-primary);
+	cursor: pointer;
+}
+
+.middle .feed .hash-tag > span:hover {
+	text-decoration: underline;
+}
+
 .middle .feed .photo {
-	margin: 0.7rem 0;
+	margin-top: 0.3rem;
+	margin-bottom: 0.7rem;
 	border-radius: var(--card-border-radius);
 	overflow: hidden;
 }
@@ -453,6 +470,16 @@ main .container .left .profile {
 	align-items: center;
 	font-size: 1.4rem;
 	margin: 0.6rem;
+}
+
+.middle .feed .action-buttons > div {
+	display: flex;
+	gap: 0.4rem;
+}
+
+.middle .feed .like img {
+	width: 1.5rem;
+	height: 1.5rem;
 }
 
 .middle .feed .liked-by {

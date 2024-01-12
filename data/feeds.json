@@ -1,0 +1,124 @@
+{
+	"feeds": [
+		{
+			"user": "Emily Smith",
+			"avatarURL": "./images/profile-4.jpg",
+			"caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			"photoURL": "./images/feed-3.jpg",
+			"likes": 235,
+			"location": "Seattle, WA",
+			"post_time": "2024-01-11T13:15:00",
+			"tags": ["lifestyle"]
+		},
+		{
+			"user": "John Doe",
+			"avatarURL": "./images/profile-5.jpg",
+			"caption": "Sunny day in the park! 🌳☀️",
+			"photoURL": "./images/feed-1.jpg",
+			"likes": 123,
+			"location": "New York, NY",
+			"post_time": "2024-01-12T10:30:00",
+			"tags": ["nature", "sunnyday"]
+		},
+		{
+			"user": "Sarah Davis",
+			"avatarURL": "./images/profile-8.jpg",
+			"caption": "Enjoying a cup of coffee at my favorite spot.",
+			"photoURL": "./images/feed-2.jpg",
+			"likes": 156,
+			"location": "San Francisco, CA",
+			"post_time": "2024-01-13T08:45:00",
+			"tags": ["coffee", "relax"]
+		},
+		{
+			"user": "Michael Johnson",
+			"avatarURL": "./images/profile-3.jpg",
+			"caption": "Exciting weekend getaway! 🏞️",
+			"photoURL": "./images/feed-4.jpg",
+			"likes": 189,
+			"location": "Los Angeles, CA",
+			"post_time": "2024-01-14T15:20:00",
+			"tags": ["travel", "adventure"]
+		},
+		{
+			"user": "Olivia Taylor",
+			"avatarURL": "./images/profile-7.jpg",
+			"caption": "Movie night with friends! 🍿🎬",
+			"photoURL": "./images/feed-5.jpg",
+			"likes": 200,
+			"location": "Chicago, IL",
+			"post_time": "2024-01-15T19:00:00",
+			"tags": ["movies", "friends"]
+		},
+		{
+			"user": "Christopher Brown",
+			"avatarURL": "./images/profile-2.jpg",
+			"caption": "New workout routine, feeling energized! 💪",
+			"photoURL": "./images/feed-6.jpg",
+			"likes": 145,
+			"location": "Dallas, TX",
+			"post_time": "2024-01-16T07:00:00",
+			"tags": ["fitness", "health"]
+		},
+		{
+			"user": "Emma Miller",
+			"avatarURL": "./images/profile-9.jpg",
+			"caption": "Cooking up a storm in the kitchen! 🍳🔥",
+			"photoURL": "./images/feed-7.jpg",
+			"likes": 178,
+			"location": "Miami, FL",
+			"post_time": "2024-01-17T12:45:00",
+			"tags": ["cooking", "foodie"]
+		},
+		{
+			"user": "William Anderson",
+			"avatarURL": "./images/profile-4.jpg",
+			"caption": "Art gallery visit, mesmerized by the paintings.",
+			"photoURL": "./images/feed-1.jpg",
+			"likes": 210,
+			"location": "Denver, CO",
+			"post_time": "2024-01-18T16:30:00",
+			"tags": ["art", "gallery"]
+		},
+		{
+			"user": "Ava Wilson",
+			"avatarURL": "./images/profile-6.jpg",
+			"caption": "Sunday brunch with a view! 🍹🌆",
+			"photoURL": "./images/feed-2.jpg",
+			"likes": 167,
+			"location": "Austin, TX",
+			"post_time": "2024-01-19T11:00:00",
+			"tags": ["brunch", "cityscape"]
+		},
+		{
+			"user": "Benjamin Martinez",
+			"avatarURL": "./images/profile-1.jpg",
+			"caption": "Tech conference vibes! 🚀💻",
+			"photoURL": "./images/feed-3.jpg",
+			"likes": 198,
+			"location": "San Jose, CA",
+			"post_time": "2024-01-20T14:15:00",
+			"tags": ["tech", "conference"]
+		},
+		{
+			"user": "Sophia Garcia",
+			"avatarURL": "./images/profile-11.jpg",
+			"caption": "Chill evening with good music! 🎶🍷",
+			"photoURL": "./images/feed-4.jpg",
+			"likes": 180,
+			"location": "Portland, OR",
+			"post_time": "2024-01-21T18:45:00",
+			"tags": ["music", "chill"]
+		},
+		{
+			"user": "Mason White",
+			"avatarURL": "./images/profile-12.jpg",
+			"caption": "Exploring hidden gems in the city.",
+			"photoURL": "./images/feed-5.jpg",
+			"likes": 220,
+			"location": "Phoenix, AZ",
+			"post_time": "2024-01-22T09:30:00",
+			"tags": ["exploration", "citylife"]
+		}
+	]
+}

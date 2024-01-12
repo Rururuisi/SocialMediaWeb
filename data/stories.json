@@ -1,0 +1,28 @@
+{
+	"stories": [
+		{
+			"user": "Diana Ayi",
+			"avatarURL": "./images/profile-1.jpg"
+		},
+		{
+			"user": "Christopher Brown",
+			"avatarURL": "./images/profile-10.jpg"
+		},
+		{
+			"user": "Sarah Davis",
+			"avatarURL": "./images/profile-13.jpg"
+		},
+		{
+			"user": "Olivia Taylor",
+			"avatarURL": "./images/profile-14.jpg"
+		},
+		{
+			"user": "Ava Wilson",
+			"avatarURL": "./images/profile-15.jpg"
+		},
+		{
+			"user": "William Anderson",
+			"avatarURL": "./images/profile-16.jpg"
+		}
+	]
+}

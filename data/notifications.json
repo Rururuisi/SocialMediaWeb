@@ -1,0 +1,34 @@
+{
+	"notifications": [
+		{
+			"user": "Keke Benjamin",
+			"avatarURL": "./images/profile-3.jpg",
+			"action": "accepted your friend request",
+			"time": "2 MINUTES AGO"
+		},
+		{
+			"user": "Rina Posh",
+			"avatarURL": "./images/profile-5.jpg",
+			"action": "sent you a friend request",
+			"time": "10 MINUTES AGO"
+		},
+		{
+			"user": "Linda Dash",
+			"avatarURL": "./images/profile-4.jpg",
+			"action": "commented your post",
+			"time": "4 HOURS AGO"
+		},
+		{
+			"user": "Jane Doe",
+			"avatarURL": "./images/profile-8.jpg",
+			"action": "and 283 others liked your post",
+			"time": "1 DAY AGO"
+		},
+		{
+			"user": "John Tirush",
+			"avatarURL": "./images/profile-10.jpg",
+			"action": "accepted your friend request",
+			"time": "2 DAYS AGO"
+		}
+	]
+}
