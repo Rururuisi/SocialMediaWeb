@@ -91,3 +91,45 @@ const getFeedTemplate = (feed) => {
 		</div>
 	`;
 };
+
+const getMessageTemplate = (msg) => {
+	const { user, avatarURL, message } = msg;
+	return `
+	<div class="message">
+		<div class="profile-photo">
+			<img src="${avatarURL}">
+		</div>
+		<div class="message-body">
+			<h5>${user}</h5>
+			<p class="text-muted">${message}</p>
+		</div>
+	</div>
+	`;
+};
+
+const getRequestTemplate = (request) => {
+	const { user, avatarURL, mutual_friends } = request;
+	return `
+	<div class="request">
+		<div class="info">
+			<div class="profile-photo">
+				<img src="${avatarURL}">
+			</div>
+			<div>
+				<h5>${user}</h5>
+				<p class="text-muted">
+					<small>${mutual_friends} mutual friends</small>
+				</p>
+			</div>
+		</div>
+		<div class="action">
+			<button class="btn btn-primary">
+				Accept
+			</button>
+			<button class="btn">
+				Decline
+			</button>
+		</div>
+	</div>
+	`;
+};

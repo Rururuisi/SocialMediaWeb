@@ -1,0 +1,19 @@
+{
+	"requests": [
+		{
+			"avatarURL": "./images/profile-17.jpg",
+			"user": "Hajia Bintu",
+			"mutual_friends": "8"
+		},
+		{
+			"avatarURL": "./images/profile-18.jpg",
+			"user": "Jackline Mensah",
+			"mutual_friends": "2"
+		},
+		{
+			"avatarURL": "./images/profile-19.jpg",
+			"user": "Jennifer Lawrence",
+			"mutual_friends": "0"
+		}
+	]
+}

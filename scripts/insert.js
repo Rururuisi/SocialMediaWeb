@@ -18,6 +18,18 @@ const insertListElements = async () => {
 			templateFunc: getFeedTemplate,
 			className: ".feeds",
 		},
+		requests: {
+			fetchLink: "./data/requests.json",
+			dataKey: "requests",
+			templateFunc: getRequestTemplate,
+			className: ".requests",
+		},
+		messages: {
+			fetchLink: "./data/messages.json",
+			dataKey: "messages",
+			templateFunc: getMessageTemplate,
+			className: ".msg-list",
+		},
 	};
 
 	// ----------------------INSERT TEMPLATES-----------------------
@@ -25,4 +37,6 @@ const insertListElements = async () => {
 	await insertTemplate(templateArguments.notifications); // notifications
 	await insertTemplate(templateArguments.stories); // stories
 	await insertTemplate(templateArguments.feeds); // feeds
+	await insertTemplate(templateArguments.requests); // requests
+	await insertTemplate(templateArguments.messages); //messages
 };

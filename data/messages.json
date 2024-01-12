@@ -1,0 +1,34 @@
+{
+	"messages": [
+		{
+			"avatarURL": "./images/profile-4.jpg",
+			"user": "Edem Quist",
+			"message": "Just woke up bruh"
+		},
+		{
+			"avatarURL": "./images/profile-5.jpg",
+			"user": "Luna Rose",
+			"message": "Got it! Thanks!"
+		},
+		{
+			"avatarURL": "./images/profile-6.jpg",
+			"user": "Linda Sulei",
+			"message": "Wdym"
+		},
+		{
+			"avatarURL": "./images/profile-7.jpg",
+			"user": "Ema Thomus",
+			"message": "2 new messages"
+		},
+		{
+			"avatarURL": "./images/profile-8.jpg",
+			"user": "Jone Tom",
+			"message": "ok"
+		},
+		{
+			"avatarURL": "./images/profile-9.jpg",
+			"user": "Adam Tomas",
+			"message": "Congratulation!"
+		}
+	]
+}
