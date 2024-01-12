@@ -14,9 +14,13 @@
 	<nav>
 		<div class="container">
 			<h2 class="logo">nokoSocial</h2>
-			<div class="search-bar">
+			<div class="search-bar feeds-search" id="nav-search">
 				<i class="uil uil-search"></i>
-				<input type="search" name="search" id="search" placeholder="search for creators">
+				<input type="search" name="search" id="navbar-search" placeholder="Search">
+				<select id="navbar-filter">
+					<option value="creator">creator</option>
+					<option value="tag">tag</option>
+				</select>
 			</div>
 			<div class="create">
 				<label class="btn btn-primary" for="create-post">Create</label>

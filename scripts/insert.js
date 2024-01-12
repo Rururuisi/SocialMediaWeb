@@ -33,10 +33,15 @@ const insertListElements = async () => {
 	};
 
 	// ----------------------INSERT TEMPLATES-----------------------
-	get(".middle").innerHTML = getHomeTemplte();
+	// left
 	await insertTemplate(templateArguments.notifications); // notifications
+
+	//middle
+	get(".middle").innerHTML = getMiddleTemplte();
 	await insertTemplate(templateArguments.stories); // stories
 	await insertTemplate(templateArguments.feeds); // feeds
-	await insertTemplate(templateArguments.requests); // requests
+
+	//right
 	await insertTemplate(templateArguments.messages); //messages
+	await insertTemplate(templateArguments.requests); // requests
 };

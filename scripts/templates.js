@@ -13,8 +13,16 @@ const getNotificationTemplate = (notification) => {
 	`;
 };
 
-const getHomeTemplte = () => {
+const getMiddleTemplte = () => {
 	return `
+		<div class="search-bar feeds-search" id="explore-search">
+			<i class="uil uil-search"></i>
+			<input type="search" name="search" id="search" placeholder="Search">
+			<select id="filter">
+				<option value="creator">creator</option>
+				<option value="tag">tag</option>
+			</select>
+		</div>
 		<div class="stories"></div>
 		<form class="create-post">
 			<div class="profile-photo">
@@ -41,7 +49,7 @@ const getStoryTemplate = (story) => {
 
 const getFeedTemplate = (feed) => {
 	const time = new Date(feed.post_time).toLocaleString();
-	const tagsHTML = feed.tags.map((tag) => `<span>#${tag}</span>`);
+	const tagsHTML = feed.tags.map((tag) => `<span class="tag">#${tag}</span>`);
 	return `
 		<div class="feed">
 			<div class="head">

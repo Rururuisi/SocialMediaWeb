@@ -16,6 +16,19 @@ const addEventListeners = () => {
 				get(".middle").className = "middle active";
 				get(".right").className = "right";
 			}
+
+			if (menuItem.id === "explore") {
+				get("#explore-search").classList.add("active");
+				if (window.innerWidth > 992) {
+					get(".search-bar").style.boxShadow =
+						"0 0 1rem var(--color-primary)";
+					setTimeout(() => {
+						get(".search-bar").style.boxShadow = "none";
+					}, 2000);
+				}
+			} else {
+				get("#explore-search").classList.remove("active");
+			}
 		});
 	});
 
@@ -147,6 +160,35 @@ const addEventListeners = () => {
 					parseInt(numbers[idx].innerText) - 1
 				} others`;
 			}
+		});
+	});
+
+	// ----------------------Handle Like Event-----------------------
+	getAll(".feeds-search").forEach((searchBar) => {
+		const inputEl = searchBar.querySelector("input");
+		const selectEl = searchBar.querySelector("select");
+		inputEl.addEventListener("keyup", (evt) => {
+			get(".stories").style.display =
+				evt.target.value === "" ? "flex" : "none";
+			get(".create-post").style.display =
+				evt.target.value === "" ? "flex" : "none";
+
+			getAll(".feed").forEach((feed, idx) => {
+				const creator = feed
+					.querySelector("h3")
+					.innerText.toLowerCase();
+				let tags = "";
+				feed.querySelectorAll(".tag").forEach((tag) => {
+					tags += tag.innerText.toLowerCase();
+				});
+				const target = selectEl.value === "creator" ? creator : tags;
+
+				if (target.includes(evt.target.value.toLowerCase())) {
+					feed.style.display = "block";
+				} else {
+					feed.style.display = "none";
+				}
+			});
 		});
 	});
 };
