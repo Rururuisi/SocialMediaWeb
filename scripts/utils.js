@@ -22,12 +22,13 @@ const fetchData = async (link) => {
 };
 
 const insertTemplate = async ({
+	data = undefined,
 	fetchLink,
 	dataKey,
 	templateFunc,
 	className,
 }) => {
-	data = (await fetchData(fetchLink))[dataKey];
+	data = data || (await fetchData(fetchLink))[dataKey];
 	const template = data
 		.reverse()
 		.map((d) => templateFunc(d))
