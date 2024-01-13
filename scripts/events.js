@@ -224,15 +224,14 @@ const addEventListeners = () => {
 		});
 	});
 
-	get("#create-post").addEventListener("keyup", (evt) => {
-		// unable to use the rule of /(?=#).../g, cause issue in mobile
-		let tags = evt.target.value.match(/#[\w\d\p{Script=Han}_-]+/gu) || [];
-		tags = tags.map((tag) => tag.replace("#", ""));
-		feedData = { ...feedData, caption: evt.target.value, tags };
-	});
-
 	get("#submit-post").addEventListener("submit", (evt) => {
 		evt.preventDefault();
+		const caption = get("#create-post").value;
+		// unable to use the rule of /(?=#).../g, cause issue in mobile
+		let tags = caption.match(/#[\w\d\p{Script=Han}_-]+/gu) || [];
+		tags = tags.map((tag) => tag.replace("#", ""));
+		feedData = { ...feedData, caption, tags };
+
 		if (feedData.caption === "" || feedData.photoURL === "") {
 			alert("Please post both caption and image! ");
 		} else {
