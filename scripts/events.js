@@ -210,14 +210,13 @@ const addEventListeners = () => {
 	let feedData = { ...initFeeds };
 
 	get("#add-image").addEventListener("input", (evt) => {
-		get(".img-thumbnail").innerHTML = "";
 		const { element, imgURL, removeIcon } = createImageContainer(
 			evt.target.files[0]
 		);
 		const wrapper = document.createElement("div");
 		wrapper.className = "img-wrapper";
 		wrapper.appendChild(element);
-		get(".img-thumbnail").appendChild(wrapper);
+		get(".img-thumbnail").innerHTML = wrapper.outerHTML;
 		feedData = { ...feedData, photoURL: imgURL };
 
 		removeIcon.addEventListener("click", () => {
