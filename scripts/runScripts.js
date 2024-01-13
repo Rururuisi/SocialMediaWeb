@@ -1,4 +1,4 @@
-(async () => {
-	await insertListElements();
+(() => {
+	insertListElements();
 	addEventListeners();
 })();
