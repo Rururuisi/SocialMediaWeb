@@ -3,7 +3,7 @@
 		{
 			"user": "Emily Smith",
 			"avatarURL": "./images/profile-4.jpg",
-			"caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			"caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. #lifestyle",
 			"photoURL": "./images/feed-3.jpg",
 			"likes": 235,
 			"location": "Seattle, WA",
@@ -13,7 +13,7 @@
 		{
 			"user": "John Doe",
 			"avatarURL": "./images/profile-5.jpg",
-			"caption": "Sunny day in the park! 🌳☀️",
+			"caption": "Sunny day in the park! 🌳☀️ #nature #sunnyday",
 			"photoURL": "./images/feed-1.jpg",
 			"likes": 123,
 			"location": "New York, NY",
@@ -23,7 +23,7 @@
 		{
 			"user": "Sarah Davis",
 			"avatarURL": "./images/profile-8.jpg",
-			"caption": "Enjoying a cup of coffee at my favorite spot.",
+			"caption": "Enjoying a cup of coffee at my favorite spot. #coffee #relax",
 			"photoURL": "./images/feed-2.jpg",
 			"likes": 156,
 			"location": "San Francisco, CA",
@@ -33,7 +33,7 @@
 		{
 			"user": "Michael Johnson",
 			"avatarURL": "./images/profile-3.jpg",
-			"caption": "Exciting weekend getaway! 🏞️",
+			"caption": "Exciting weekend getaway! 🏞️ #travel #adventure",
 			"photoURL": "./images/feed-4.jpg",
 			"likes": 189,
 			"location": "Los Angeles, CA",
@@ -43,7 +43,7 @@
 		{
 			"user": "Olivia Taylor",
 			"avatarURL": "./images/profile-7.jpg",
-			"caption": "Movie night with friends! 🍿🎬",
+			"caption": "Movie night with friends! 🍿🎬 #movies #friends",
 			"photoURL": "./images/feed-5.jpg",
 			"likes": 200,
 			"location": "Chicago, IL",
@@ -53,7 +53,7 @@
 		{
 			"user": "Christopher Brown",
 			"avatarURL": "./images/profile-2.jpg",
-			"caption": "New workout routine, feeling energized! 💪",
+			"caption": "New workout routine, feeling energized! 💪 #fitness #health",
 			"photoURL": "./images/feed-6.jpg",
 			"likes": 145,
 			"location": "Dallas, TX",
@@ -63,7 +63,7 @@
 		{
 			"user": "Emma Miller",
 			"avatarURL": "./images/profile-9.jpg",
-			"caption": "Cooking up a storm in the kitchen! 🍳🔥",
+			"caption": "Cooking up a storm in the kitchen! 🍳🔥 #cooking #foodie",
 			"photoURL": "./images/feed-7.jpg",
 			"likes": 178,
 			"location": "Miami, FL",
@@ -73,7 +73,7 @@
 		{
 			"user": "William Anderson",
 			"avatarURL": "./images/profile-4.jpg",
-			"caption": "Art gallery visit, mesmerized by the paintings.",
+			"caption": "Art gallery visit, mesmerized by the paintings. #art #gallery",
 			"photoURL": "./images/feed-1.jpg",
 			"likes": 210,
 			"location": "Denver, CO",
@@ -83,7 +83,7 @@
 		{
 			"user": "Ava Wilson",
 			"avatarURL": "./images/profile-6.jpg",
-			"caption": "Sunday brunch with a view! 🍹🌆",
+			"caption": "Sunday brunch with a view! 🍹🌆 #brunch #cityscape",
 			"photoURL": "./images/feed-2.jpg",
 			"likes": 167,
 			"location": "Austin, TX",
@@ -93,7 +93,7 @@
 		{
 			"user": "Benjamin Martinez",
 			"avatarURL": "./images/profile-1.jpg",
-			"caption": "Tech conference vibes! 🚀💻",
+			"caption": "Tech conference vibes! 🚀💻 #tech #conference",
 			"photoURL": "./images/feed-3.jpg",
 			"likes": 198,
 			"location": "San Jose, CA",
@@ -103,7 +103,7 @@
 		{
 			"user": "Sophia Garcia",
 			"avatarURL": "./images/profile-11.jpg",
-			"caption": "Chill evening with good music! 🎶🍷",
+			"caption": "Chill evening with good music! 🎶🍷 #music #chill",
 			"photoURL": "./images/feed-4.jpg",
 			"likes": 180,
 			"location": "Portland, OR",
@@ -113,7 +113,7 @@
 		{
 			"user": "Mason White",
 			"avatarURL": "./images/profile-12.jpg",
-			"caption": "Exploring hidden gems in the city.",
+			"caption": "Exploring hidden gems in the city. #exploration #citylife",
 			"photoURL": "./images/feed-5.jpg",
 			"likes": 220,
 			"location": "Phoenix, AZ",

@@ -15,20 +15,15 @@ const changeActiveObj = (items, idx) => {
 	});
 };
 
-const fetchData = async (link) => {
-	const res = await fetch(link);
-	const data = await res.json();
-	return data;
-};
-
 const insertTemplate = async ({
-	fetchLink,
-	dataKey,
+	data = undefined,
 	templateFunc,
 	className,
 }) => {
-	const data = (await fetchData(fetchLink))[dataKey];
-	const template = data.map((d) => templateFunc(d)).join("");
+	const template = data
+		.reverse()
+		.map((d) => templateFunc(d))
+		.join("");
 	const elementHTML = document.querySelector(className);
 	elementHTML.innerHTML = template;
 };

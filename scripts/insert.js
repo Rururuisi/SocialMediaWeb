@@ -1,32 +1,27 @@
-const insertListElements = async () => {
+const insertListElements = () => {
 	const templateArguments = {
 		notifications: {
-			fetchLink: "./data/notifications.json",
-			dataKey: "notifications",
+			data: notifications,
 			templateFunc: getNotificationTemplate,
 			className: ".notifications",
 		},
 		stories: {
-			fetchLink: "./data/stories.json",
-			dataKey: "stories",
+			data: stories,
 			templateFunc: getStoryTemplate,
 			className: ".stories",
 		},
 		feeds: {
-			fetchLink: "./data/feeds.json",
-			dataKey: "feeds",
+			data: feeds,
 			templateFunc: getFeedTemplate,
 			className: ".feeds",
 		},
 		requests: {
-			fetchLink: "./data/requests.json",
-			dataKey: "requests",
+			data: requests,
 			templateFunc: getRequestTemplate,
 			className: ".requests",
 		},
 		messages: {
-			fetchLink: "./data/messages.json",
-			dataKey: "messages",
+			data: messages,
 			templateFunc: getMessageTemplate,
 			className: ".msg-list",
 		},
@@ -34,14 +29,14 @@ const insertListElements = async () => {
 
 	// ----------------------INSERT TEMPLATES-----------------------
 	// left
-	await insertTemplate(templateArguments.notifications); // notifications
+	insertTemplate(templateArguments.notifications); // notifications
 
 	//middle
 	get(".middle").innerHTML = getMiddleTemplte();
-	await insertTemplate(templateArguments.stories); // stories
-	await insertTemplate(templateArguments.feeds); // feeds
+	insertTemplate(templateArguments.stories); // stories
+	insertTemplate(templateArguments.feeds); // feeds
 
 	//right
-	await insertTemplate(templateArguments.messages); //messages
-	await insertTemplate(templateArguments.requests); // requests
+	insertTemplate(templateArguments.messages); //messages
+	insertTemplate(templateArguments.requests); // requests
 };

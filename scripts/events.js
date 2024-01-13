@@ -144,26 +144,29 @@ const addEventListeners = () => {
 	});
 
 	// ----------------------Handle Like Event-----------------------
-	const numbers = getAll(".number-of-likes");
-	getAll(".like").forEach((heart, idx) => {
-		heart.addEventListener("click", () => {
-			const noAction = '<i class="uil uil-heart"></i>';
-			const liked = '<img src="./images/heart.png"/>';
-			if (heart.innerHTML === noAction) {
-				heart.innerHTML = liked;
-				numbers[idx].innerText = `${
-					parseInt(numbers[idx].innerText) + 1
-				} others`;
-			} else {
-				heart.innerHTML = noAction;
-				numbers[idx].innerText = `${
-					parseInt(numbers[idx].innerText) - 1
-				} others`;
-			}
+	const addLikeEvyListener = () => {
+		const numbers = getAll(".number-of-likes");
+		getAll(".like").forEach((heart, idx) => {
+			heart.addEventListener("click", () => {
+				const noAction = '<i class="uil uil-heart"></i>';
+				const liked = '<img src="./images/heart.png"/>';
+				if (heart.innerHTML === noAction) {
+					heart.innerHTML = liked;
+					numbers[idx].innerText = `${
+						parseInt(numbers[idx].innerText) + 1
+					} others`;
+				} else {
+					heart.innerHTML = noAction;
+					numbers[idx].innerText = `${
+						parseInt(numbers[idx].innerText) - 1
+					} others`;
+				}
+			});
 		});
-	});
+	};
+	addLikeEvyListener();
 
-	// ----------------------Handle Like Event-----------------------
+	// ----------------------Handle Search Event-----------------------
 	getAll(".feeds-search").forEach((searchBar) => {
 		const inputEl = searchBar.querySelector("input");
 		const selectEl = searchBar.querySelector("select");
@@ -173,12 +176,12 @@ const addEventListeners = () => {
 			get(".create-post").style.display =
 				evt.target.value === "" ? "flex" : "none";
 
-			getAll(".feed").forEach((feed, idx) => {
+			getAll(".feed").forEach((feed) => {
 				const creator = feed
 					.querySelector("h3")
 					.innerText.toLowerCase();
 				let tags = "";
-				feed.querySelectorAll(".tag").forEach((tag) => {
+				feed.querySelectorAll(".hash-tag").forEach((tag) => {
 					tags += tag.innerText.toLowerCase();
 				});
 				const target = selectEl.value === "creator" ? creator : tags;
@@ -190,5 +193,69 @@ const addEventListeners = () => {
 				}
 			});
 		});
+	});
+
+	// ----------------------Handle Create Post-----------------------
+	const initFeeds = {
+		user: "Diana Ayi",
+		avatarURL: "./images/profile-1.jpg",
+		caption: "",
+		photoURL: "",
+		location: "New York, NY",
+		likes: 0,
+		post_time: "",
+		tags: [],
+	};
+
+	let feeds = { ...initFeeds };
+
+	const createImageContainer = (img) => {
+		const url = URL.createObjectURL(img);
+		const image = document.createElement("img");
+		image.src = url;
+		const removeIcon = document.createElement("span");
+		removeIcon.innerHTML = `<i class="uil uil-multiply"></i>`;
+		const div = document.createElement("div");
+		div.appendChild(image);
+		div.appendChild(removeIcon);
+		return { element: div, imgURL: url, removeIcon };
+	};
+
+	get("#add-image").addEventListener("input", (evt) => {
+		const { element, imgURL, removeIcon } = createImageContainer(
+			evt.target.files[0]
+		);
+		const wrapper = document.createElement("div");
+		wrapper.className = "img-wrapper";
+		wrapper.appendChild(element);
+		get(".img-thumbnail").appendChild(wrapper);
+		feeds = { ...feeds, photoURL: imgURL };
+
+		removeIcon.addEventListener("click", () => {
+			get(".img-thumbnail").removeChild(wrapper);
+		});
+	});
+
+	get("#create-post").addEventListener("keyup", (evt) => {
+		const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
+		feeds = { ...feeds, caption: evt.target.value, tags };
+	});
+
+	get("#submit-post").addEventListener("submit", async (evt) => {
+		evt.preventDefault();
+		if (feeds.caption === "" || feeds.photoURL === "") {
+			alert("Please post both caption and image! ");
+		} else {
+			feeds.post_time = Date.now();
+			feeds.likes = Math.floor(Math.random() * 999);
+
+			const feedEle = get(".feeds");
+			feedEle.innerHTML = getFeedTemplate(feeds) + feedEle.innerHTML;
+
+			evt.target.reset();
+			get(".img-thumbnail").innerHTML = "";
+			feeds = initFeeds;
+			addLikeEvyListener();
+		}
 	});
 };
