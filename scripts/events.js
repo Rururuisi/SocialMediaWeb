@@ -181,7 +181,7 @@ const addEventListeners = () => {
 					.querySelector("h3")
 					.innerText.toLowerCase();
 				let tags = "";
-				feed.querySelectorAll(".tag").forEach((tag) => {
+				feed.querySelectorAll(".hash-tag").forEach((tag) => {
 					tags += tag.innerText.toLowerCase();
 				});
 				const target = selectEl.value === "creator" ? creator : tags;
