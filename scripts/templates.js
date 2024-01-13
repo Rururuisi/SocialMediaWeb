@@ -54,7 +54,7 @@ const getStoryTemplate = (story) => {
 
 const getFeedTemplate = (feed) => {
 	const time = new Date(feed.post_time).toLocaleString();
-	const tags = feed.caption.match(/#[\w\d-_]+/g);
+	const tags = feed.caption.match(/#[\w\d\p{Han}-_]+/g);
 	tags &&
 		tags.forEach((tag) => {
 			feed.caption = feed.caption.replace(
