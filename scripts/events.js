@@ -20,10 +20,18 @@ const addEventListeners = () => {
 			if (menuItem.id === "explore") {
 				get("#explore-search").classList.add("active");
 				if (window.innerWidth > 992) {
+					get("#navbar-search").focus();
 					get(".search-bar").style.boxShadow =
 						"0 0 1rem var(--color-primary)";
 					setTimeout(() => {
 						get(".search-bar").style.boxShadow = "none";
+					}, 2000);
+				} else {
+					get("#search").focus();
+					get("#explore-search").style.boxShadow =
+						"0 0 1rem var(--color-primary)";
+					setTimeout(() => {
+						get("#explore-search").style.boxShadow = "none";
 					}, 2000);
 				}
 			} else {
