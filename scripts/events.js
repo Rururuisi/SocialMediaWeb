@@ -225,8 +225,10 @@ const addEventListeners = () => {
 	});
 
 	get("#create-post").addEventListener("keyup", (evt) => {
-		// const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
-		feedData = { ...feedData, caption: evt.target.value };
+		// unable to use the rule of /(?=#).../g, cause issue in mobile
+		let tags = evt.target.value.match(/#[A-z]+-*[A-z]*/g) || [];
+		tags = tags.map((tag) => tag.replace("#", ""));
+		feedData = { ...feedData, caption: evt.target.value, tags };
 	});
 
 	get("#submit-post").addEventListener("submit", (evt) => {
