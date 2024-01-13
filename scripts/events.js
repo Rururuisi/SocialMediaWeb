@@ -209,6 +209,16 @@ const addEventListeners = () => {
 
 	let feedData = { ...initFeeds };
 
+	getAll("label[for='create-post']").forEach((label) => {
+		label.addEventListener("click", () => {
+			get(".input-container").style.boxShadow =
+				"0 0 1rem var(--color-primary)";
+			setTimeout(() => {
+				get(".input-container").style.boxShadow = "none";
+			}, 2000);
+		});
+	});
+
 	get("#add-image").addEventListener("input", (evt) => {
 		const { element, imgURL, removeIcon } = createImageContainer(
 			evt.target.files[0]
