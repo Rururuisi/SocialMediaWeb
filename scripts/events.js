@@ -226,7 +226,7 @@ const addEventListeners = () => {
 
 	get("#create-post").addEventListener("keyup", (evt) => {
 		// unable to use the rule of /(?=#).../g, cause issue in mobile
-		let tags = evt.target.value.match(/#[\w\d\p{Han}-_]+/g) || [];
+		let tags = evt.target.value.match(/#[\w\d\p{Han}_-]+/g) || [];
 		tags = tags.map((tag) => tag.replace("#", ""));
 		feedData = { ...feedData, caption: evt.target.value, tags };
 	});
