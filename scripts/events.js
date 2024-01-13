@@ -237,8 +237,8 @@ const addEventListeners = () => {
 	});
 
 	get("#create-post").addEventListener("keyup", (evt) => {
-		const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
-		feeds = { ...feeds, caption: evt.target.value, tags };
+		//const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
+		feeds = { ...feeds, caption: evt.target.value };
 	});
 
 	get("#submit-post").addEventListener("submit", (evt) => {

@@ -100,12 +100,12 @@ MEDIA QUERY FOR SMALL TABLETS AND MOBILE PHONES
 		display: block;
 	}
 
-	main .container .sidebar {
+	main .container .left {
 		translate: 5rem 0;
 		transition: translate 0.5s ease;
 	}
 
-	main .container .sidebar.active {
+	main .container .left.active {
 		translate: 0;
 	}
 
