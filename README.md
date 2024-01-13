@@ -1,9 +1,6 @@
 # Responsive Social Media Website (Pure Frontend Interface)
 <br>
 Technologies: Html, Css, Javascript<br>
-【Can either run on a lightweight express server (fetch data from json files, need to cancel out the data script from index.html) 
-<br>or <br>
-simply open the html file(will use data from data script directly)】
 <br><br>
 Features: <br>
 1. Responsive for different devices <br>
