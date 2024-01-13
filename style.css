@@ -434,21 +434,77 @@ main .container .left .profile {
 .middle .create-post {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	background: var(--color-white);
+	border-radius: var(--border-radius);
+}
+
+.middle .create-post .img-thumbnail {
+	border-radius: var(--border-radius);
+}
+
+.middle .create-post .img-thumbnail .img-wrapper {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding: var(--card-padding);
+}
+
+.middle .create-post .img-wrapper img {
+	border-radius: 0.6rem;
+}
+
+.middle .create-post .img-wrapper div {
+	position: relative;
+	margin: 0.5rem;
+}
+
+.middle .create-post .img-wrapper span {
+	position: absolute;
+	top: 0.4rem;
+	right: 0.4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	color: white;
+	background: var(--color-gray);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.middle .input-container {
+	width: 100%;
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 1rem;
 	padding: 0.4rem var(--card-padding);
 	background: var(--color-white);
 	border-radius: var(--border-radius);
 }
 
-.middle .create-post input[type="text"] {
+.middle .input-container input[type="text"] {
 	justify-self: start;
 	width: 100%;
 	padding-left: 1rem;
 	margin-right: 1rem;
 	background: transparent;
 	color: var(--color-dark);
+}
+
+.middle .input-container input[type="file"] {
+	display: none;
+}
+
+.middle .input-container label.add-image {
+	margin-right: 0.7rem;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+.middle .input-container label.add-image:hover {
+	color: var(--color-primary);
 }
 
 /* ---------------------FEEDS------------------- */
@@ -478,12 +534,12 @@ main .container .left .profile {
 	font-size: 0.9rem;
 }
 
-.middle .feed .hash-tag > span {
+.middle .feed .hash-tag {
 	color: var(--color-primary);
 	cursor: pointer;
 }
 
-.middle .feed .hash-tag > span:hover {
+.middle .feed .hash-tag:hover {
 	text-decoration: underline;
 }
 

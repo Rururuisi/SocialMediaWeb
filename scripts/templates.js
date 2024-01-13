@@ -24,12 +24,17 @@ const getMiddleTemplte = () => {
 			</select>
 		</div>
 		<div class="stories"></div>
-		<form class="create-post">
-			<div class="profile-photo">
-				<img src="./images/profile-1.jpg">
+		<form class="create-post" id="submit-post">
+			<div class="img-thumbnail"></div>
+			<div class="input-container">
+				<div class="profile-photo">
+					<img src="./images/profile-1.jpg">
+				</div>
+				<input type="text" id="create-post" placeholder="What's on your mind, Diana? ">
+				<input type="file" id="add-image"/>
+				<label for="add-image" class="add-image"><i class="uil uil-image-plus"></i></label>
+				<input class="btn btn-primary" type="submit" value="Post">
 			</div>
-			<input type="text" id="create-post" placeholder="What's on your mind, Diana? ">
-			<input class="btn btn-primary" type="submit" value="Post">
 		</form>
 		<div class="feeds"></div>
 	`;
@@ -49,7 +54,15 @@ const getStoryTemplate = (story) => {
 
 const getFeedTemplate = (feed) => {
 	const time = new Date(feed.post_time).toLocaleString();
-	const tagsHTML = feed.tags.map((tag) => `<span class="tag">#${tag}</span>`);
+	const tags = feed.caption.match(/#[A-z]+-*[A-z]*/g);
+	tags &&
+		tags.forEach((tag) => {
+			feed.caption = feed.caption.replace(
+				tag,
+				`<span class="hash-tag">${tag}</span>`
+			);
+		});
+
 	return `
 		<div class="feed">
 			<div class="head">
@@ -69,7 +82,6 @@ const getFeedTemplate = (feed) => {
 			<div class="caption">
 				<p>
 					${feed.caption} 
-					<span class="hash-tag">${tagsHTML.join(" ")}</span>
 				</p>
 			</div>
 			<div class="photo">
@@ -91,9 +103,7 @@ const getFeedTemplate = (feed) => {
 				<span><img src="./images/profile-10.jpg"></span>
 				<span><img src="./images/profile-4.jpg"></span>
 				<span><img src="./images/profile-15.jpg"></span>
-				<p>Liked by <b>Ernest Achiever</b> and <b class="number-of-likes">${
-					feed.likes
-				} others</b></p>
+				<p>Liked by <b>Ernest Achiever</b> and <b class="number-of-likes">${feed.likes} others</b></p>
 			</div>
 			<div class="show-comments text-muted">View all 277 comments</div>
 		</div>

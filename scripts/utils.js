@@ -26,9 +26,14 @@ const insertTemplate = async ({
 	dataKey,
 	templateFunc,
 	className,
+	addedData = undefined,
 }) => {
-	const data = (await fetchData(fetchLink))[dataKey];
-	const template = data.map((d) => templateFunc(d)).join("");
+	data = (await fetchData(fetchLink))[dataKey];
+	addedData && data.push(addedData);
+	const template = data
+		.reverse()
+		.map((d) => templateFunc(d))
+		.join("");
 	const elementHTML = document.querySelector(className);
 	elementHTML.innerHTML = template;
 };
