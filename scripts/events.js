@@ -249,13 +249,9 @@ const addEventListeners = () => {
 			feeds.post_time = Date.now();
 			feeds.likes = Math.floor(Math.random() * 999);
 
-			await insertTemplate({
-				fetchLink: "./data/feeds.json",
-				dataKey: "feeds",
-				templateFunc: getFeedTemplate,
-				className: ".feeds",
-				addedData: feeds,
-			});
+			const feedEle = get(".feeds");
+			feedEle.innerHTML = getFeedTemplate(feeds) + feedEle.innerHTML;
+
 			evt.target.reset();
 			get(".img-thumbnail").innerHTML = "";
 			feeds = initFeeds;
