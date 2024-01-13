@@ -25,7 +25,6 @@ const getMiddleTemplte = () => {
 		</div>
 		<div class="stories"></div>
 		<form class="create-post" id="submit-post">
-			<div class="img-thumbnail"></div>
 			<div class="input-container">
 				<div class="profile-photo">
 					<img src="./images/profile-1.jpg">
@@ -35,6 +34,7 @@ const getMiddleTemplte = () => {
 				<label for="add-image" class="add-image"><i class="uil uil-image-plus"></i></label>
 				<input class="btn btn-primary" type="submit" value="Post">
 			</div>
+			<div class="img-thumbnail"></div>
 		</form>
 		<div class="feeds"></div>
 	`;

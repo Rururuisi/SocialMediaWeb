@@ -78,6 +78,7 @@
 	display: grid;
 	grid-template-columns: auto auto;
 	padding: var(--card-padding);
+	padding-top: 0;
 }
 
 .middle .create-post .img-wrapper img {
@@ -179,6 +180,11 @@
 	margin-bottom: 0.7rem;
 	border-radius: var(--card-border-radius);
 	overflow: hidden;
+}
+
+.middle .feed .photo img {
+	border-radius: var(--card-border-radius);
+	object-fit: cover;
 }
 
 .middle .feed .action-buttons {
