@@ -15,20 +15,7 @@ const changeActiveObj = (items, idx) => {
 	});
 };
 
-const fetchData = async (link) => {
-	const res = await fetch(link);
-	const data = await res.json();
-	return data;
-};
-
-const insertTemplate = async ({
-	data = undefined,
-	fetchLink,
-	dataKey,
-	templateFunc,
-	className,
-}) => {
-	data = data || (await fetchData(fetchLink))[dataKey];
+const insertTemplate = ({ data = undefined, templateFunc, className }) => {
 	const template = data
 		.reverse()
 		.map((d) => templateFunc(d))
