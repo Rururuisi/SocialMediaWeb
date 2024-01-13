@@ -15,11 +15,7 @@ const changeActiveObj = (items, idx) => {
 	});
 };
 
-const insertTemplate = async ({
-	data = undefined,
-	templateFunc,
-	className,
-}) => {
+const insertTemplate = ({ data = undefined, templateFunc, className }) => {
 	const template = data
 		.reverse()
 		.map((d) => templateFunc(d))

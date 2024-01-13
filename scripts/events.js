@@ -241,7 +241,7 @@ const addEventListeners = () => {
 		feeds = { ...feeds, caption: evt.target.value, tags };
 	});
 
-	get("#submit-post").addEventListener("submit", async (evt) => {
+	get("#submit-post").addEventListener("submit", (evt) => {
 		evt.preventDefault();
 		if (feeds.caption === "" || feeds.photoURL === "") {
 			alert("Please post both caption and image! ");
