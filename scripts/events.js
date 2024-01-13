@@ -222,7 +222,6 @@ const addEventListeners = () => {
 	};
 
 	get("#add-image").addEventListener("input", (evt) => {
-		console.log(evt.target.files[0]);
 		const { element, imgURL, removeIcon } = createImageContainer(
 			evt.target.files[0]
 		);
