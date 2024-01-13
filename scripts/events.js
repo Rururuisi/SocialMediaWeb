@@ -12,7 +12,7 @@ const addEventListeners = () => {
 				get(".notifications-popup").classList.add("active");
 			}
 
-			if (menuItem.id === "home") {
+			if (menuItem.id === "home" || menuItem.id === "explore") {
 				get(".middle").className = "middle active";
 				get(".right").className = "right";
 			}
@@ -62,10 +62,10 @@ const addEventListeners = () => {
 	const menuToggler = get(".menu-toggle");
 	menuToggler.addEventListener("click", () => {
 		if (menuToggler.className === "menu-toggle") {
-			get(".sidebar").classList.add("active");
+			get(".left").classList.add("active");
 			menuToggler.classList.add("active");
 		} else {
-			get(".sidebar").classList.remove("active");
+			get(".left").classList.remove("active");
 			menuToggler.classList.remove("active");
 			get(".notifications-popup").classList.remove("active");
 		}
@@ -207,19 +207,7 @@ const addEventListeners = () => {
 		tags: [],
 	};
 
-	let feeds = { ...initFeeds };
-
-	const createImageContainer = (img) => {
-		const url = URL.createObjectURL(img);
-		const image = document.createElement("img");
-		image.src = url;
-		const removeIcon = document.createElement("span");
-		removeIcon.innerHTML = `<i class="uil uil-multiply"></i>`;
-		const div = document.createElement("div");
-		div.appendChild(image);
-		div.appendChild(removeIcon);
-		return { element: div, imgURL: url, removeIcon };
-	};
+	let feedData = { ...initFeeds };
 
 	get("#add-image").addEventListener("input", (evt) => {
 		const { element, imgURL, removeIcon } = createImageContainer(
@@ -229,7 +217,7 @@ const addEventListeners = () => {
 		wrapper.className = "img-wrapper";
 		wrapper.appendChild(element);
 		get(".img-thumbnail").appendChild(wrapper);
-		feeds = { ...feeds, photoURL: imgURL };
+		feedData = { ...feedData, photoURL: imgURL };
 
 		removeIcon.addEventListener("click", () => {
 			get(".img-thumbnail").removeChild(wrapper);
@@ -237,24 +225,24 @@ const addEventListeners = () => {
 	});
 
 	get("#create-post").addEventListener("keyup", (evt) => {
-		//const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
-		feeds = { ...feeds, caption: evt.target.value };
+		// const tags = evt.target.value.match(/(?<=#)[A-z]+-*[A-z]*/g) || [];
+		feedData = { ...feedData, caption: evt.target.value };
 	});
 
 	get("#submit-post").addEventListener("submit", (evt) => {
 		evt.preventDefault();
-		if (feeds.caption === "" || feeds.photoURL === "") {
+		if (feedData.caption === "" || feedData.photoURL === "") {
 			alert("Please post both caption and image! ");
 		} else {
-			feeds.post_time = Date.now();
-			feeds.likes = Math.floor(Math.random() * 999);
+			feedData.post_time = Date.now();
+			feedData.likes = Math.floor(Math.random() * 999);
 
 			const feedEle = get(".feeds");
-			feedEle.innerHTML = getFeedTemplate(feeds) + feedEle.innerHTML;
+			feedEle.innerHTML = getFeedTemplate(feedData) + feedEle.innerHTML;
 
 			evt.target.reset();
 			get(".img-thumbnail").innerHTML = "";
-			feeds = initFeeds;
+			feedData = initFeeds;
 			addLikeEvyListener();
 		}
 	});
