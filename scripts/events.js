@@ -210,6 +210,7 @@ const addEventListeners = () => {
 	let feedData = { ...initFeeds };
 
 	get("#add-image").addEventListener("input", (evt) => {
+		get(".img-thumbnail").innerHTML = "";
 		const { element, imgURL, removeIcon } = createImageContainer(
 			evt.target.files[0]
 		);
